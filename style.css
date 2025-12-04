@@ -1,0 +1,87 @@
+/* Thiết lập chung */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Yêu cầu 7: Sử dụng Flexbox cho thanh điều hướng */
+.navbar ul {
+    display: flex; /* Kích hoạt Flexbox */
+    justify-content: space-around; /* Căn đều các mục */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #333;
+}
+
+/* Yêu cầu 4: Tạo kiểu hấp dẫn (3 thuộc tính CSS) */
+.navbar a {
+    text-decoration: none;
+    color: white; /* Thuộc tính 1 */
+    padding: 15px 20px; /* Thuộc tính 2 */
+    font-weight: bold; /* Thuộc tính 3 */
+    display: block;
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+/* Yêu cầu 3: Position và :focus */
+.skip-link {
+    position: absolute; /* Rút khỏi luồng tài liệu */
+    top: -40px; /* Ẩn lên phía trên màn hình */
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    z-index: 100;
+    text-decoration: none;
+    transition: top 0.3s;
+}
+
+/* Khi liên kết được focus (nhấn Tab), nó sẽ trượt xuống */
+.skip-link:focus {
+    top: 0;
+}
+/* Yêu cầu 6: Grid Layout (ít nhất 2 cột) */
+.image-grid {
+    display: grid; /* Kích hoạt Grid */
+    grid-template-columns: 1fr 1fr; /* 2 cột bằng nhau */
+    gap: 20px; /* Khoảng cách giữa các ô */
+    padding: 20px;
+}
+
+/* Nếu màn hình lớn, tăng lên 3 cột (Tùy chọn thêm) */
+@media (min-width: 768px) {
+    .image-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Yêu cầu 5: Box Model (border, padding, border-radius) */
+.styled-img {
+    width: 100%; /* Ảnh co giãn theo ô Grid */
+    border: 5px solid #ddd; /* Đường viền */
+    padding: 5px; /* Đệm (khoảng cách giữa ảnh và viền) */
+    border-radius: 10px; /* Bo góc */
+    box-sizing: border-box; /* Đảm bảo padding không làm vỡ layout */
+    transition: transform 0.3s ease; /* Chuẩn bị cho hover */
+}
+
+[attachment_0](attachment)
+
+/* Yêu cầu 8: Pseudo-class :hover thú vị */
+.styled-img:hover {
+    transform: scale(1.05) rotate(2deg); /* Phóng to nhẹ và xoay */
+    border-color: #ff6347; /* Đổi màu viền */
+    cursor: pointer;
+}
+
+/* Yêu cầu 9: nth-child selector */
+/* Chọn các ảnh ở vị trí chẵn (2, 4, 6...) và đổi kiểu */
+.styled-img:nth-child(even) {
+    border-radius: 50%; /* Làm tròn các ảnh chẵn */
+    border-color: #333;
+}
